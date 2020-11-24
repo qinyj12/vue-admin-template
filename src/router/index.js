@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '控制面板', icon: 'dashboard' }
     }]
   },
 
@@ -79,6 +79,7 @@ export const constantRoutes = [
 
   {
     path: '/form',
+    hidden: true, // 不知道干嘛用的，隐藏
     component: Layout,
     children: [
       {
@@ -99,7 +100,20 @@ export const constantRoutes = [
         path: 'index',
         name: 'Article',
         component: () => import('@/views/article/index'),
-        meta: { title: 'Article', icon: 'form' }
+        meta: { title: '文章编辑', icon: 'form' }
+      }
+    ]
+  },
+  // 添加comment页
+  {
+    path: '/comment',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Comment',
+        component: () => import('@/views/comment/index'),
+        meta: { title: '评论管理', icon: 'form' }
       }
     ]
   },

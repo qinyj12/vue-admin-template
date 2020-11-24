@@ -15,6 +15,11 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+import mavonEditor from 'mavon-editor' //引入md编辑器
+import 'mavon-editor/dist/css/index.css' // 引入md编辑器样式
+
+import VueCropper from 'vue-cropper' // 引入vue-cropper图片裁剪模块
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -34,6 +39,10 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+Vue.use(mavonEditor) // 使用md编辑器
+
+Vue.use(VueCropper) // 使用vue-cropper图片裁剪模块
 
 new Vue({
   el: '#app',
