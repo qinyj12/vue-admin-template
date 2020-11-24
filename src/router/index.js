@@ -90,8 +90,23 @@ export const constantRoutes = [
     ]
   },
 
+  // 添加article页
+  {
+    path: '/article',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Article',
+        component: () => import('@/views/article/index'),
+        meta: { title: 'Article', icon: 'form' }
+      }
+    ]
+  },
+
   {
     path: '/nested',
+    hidden: true, // 隐藏
     component: Layout,
     redirect: '/nested/menu1',
     name: 'Nested',
@@ -151,6 +166,7 @@ export const constantRoutes = [
 
   {
     path: 'external-link',
+    hidden: true, // 隐藏
     component: Layout,
     children: [
       {
